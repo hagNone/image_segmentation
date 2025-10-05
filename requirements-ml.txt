@@ -1,0 +1,5 @@
+spacy==3.7.5
+spacy-lookups-data==1.0.5
+sentence-transformers==3.0.1
+numpy==2.1.2
+pandas==2.2.2

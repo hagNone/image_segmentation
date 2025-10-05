@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>GeopolStory Daily Digest</title>
+    <style>
+      body { font-family: Arial, sans-serif; color: #222; }
+      .container { max-width: 680px; margin: auto; padding: 16px; }
+      .header { border-bottom: 1px solid #ddd; margin-bottom: 12px; }
+      .episode { margin-bottom: 24px; }
+      .footer { font-size: 12px; color: #666; margin-top: 24px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>GeopolStory — Daily Digest for {{ date }}</h2>
+      </div>
+      {% for ep in episodes %}
+      <div class="episode">
+        <h3>{{ ep.conflict_name }}</h3>
+        <p><strong>{{ ep.summary }}</strong></p>
+        <div>{{ ep.narrative | safe }}</div>
+        <div class="footer">
+          <div>Confidence: {{ ep.confidence|floatformat:2 }}</div>
+          <div>Sources:
+            <ul>
+              {% for s in ep.sources %}
+              <li><a href="{{ s.url }}">{{ s.title }}</a> — {{ s.source_name }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <p class="footer">You're receiving this email because you subscribed to GeopolStory. Unsubscribe via your profile settings.</p>
+    </div>
+  </body>
+</html>
