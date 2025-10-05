@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+
+# Django
+staticfiles/
+media/
+db.sqlite3
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage*
+
+# mypy/ruff
+.mypy_cache/
+.ruff_cache/
